@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Margin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Source+Serif+4:opsz,wght@8..60,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">Margin</div>
+    <div id="me" class="mine"></div>
+  </header>
+  <div id="banner" class="banner" role="status" hidden></div>
+
+  <main id="main">
+    <!-- Home: ask box, top helpers, filters, list of questions -->
+    <section id="feedView">
+      <div class="hero" id="hero">
+        <h1>What are you stuck on?</h1>
+        <p>Post the problem, add a photo if it helps. Anyone can explain it, and you pick the explanation that worked.</p>
+        <div id="askSlot"></div>
+      </div>
+
+      <div id="helpers" hidden></div>
+
+      <div class="controls">
+        <input id="search" class="field search" type="search" placeholder="Search questions" aria-label="Search questions" autocomplete="off">
+        <select id="fSubject" class="field" aria-label="Filter by subject"></select>
+        <select id="fLevel" class="field" aria-label="Filter by level"></select>
+        <div class="tabs" id="tabs" role="group" aria-label="Show questions"></div>
+      </div>
+      <div id="list" aria-live="polite"></div>
+    </section>
+
+    <!-- One question: the question, the explanations, and the reply box -->
+    <section id="qView" hidden>
+      <button class="btn ghost back" id="back" type="button">Back to questions</button>
+      <div class="qbox" id="qHead"></div>
+      <div id="aList"></div>
+      <div id="ansComposer" class="composer"></div>
+    </section>
+  </main>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <form method="dialog">
+    <h2 id="dlgTitle"></h2>
+    <p id="dlgBody"></p>
+    <div class="row end">
+      <button class="btn" value="cancel">Cancel</button>
+      <button class="btn primary" id="dlgOk" value="ok">OK</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="lb" class="lb" aria-label="Photo">
+  <img id="lbImg" alt="Enlarged photo">
+  <p>Tap anywhere to close</p>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
